@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { KeyboardAvoidingView, KeyboardProvider } from 'react-native-keyboard-controller';
 
-function Dummy(): React.JSX.Element {
+function SlowLoadingComponent(): React.JSX.Element {
   const data: number[] = [];
   for (let i = 0; i < 20; i++) {
     for (let j = 0; j < 100; j++) {
@@ -43,7 +43,7 @@ function Screen2(props: any): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior="padding" style={{flex: 1}}>
       <View style={{backgroundColor: 'grey', flex: 1}}>
-        <Dummy />
+        <SlowLoadingComponent />
         <TouchableOpacity
           onPress={() => props.navigation.replace('Screen1')}
           style={{ backgroundColor: 'teal', width: '100%' }}>
